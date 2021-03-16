@@ -1,70 +1,53 @@
-## Getting Started with Create React App
+[![React](https://wiki.uqbar.org/img/languages/React-logo.png "React")](# "React")
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## PRUEBA TÉCNICA DESARROLLADOR FRONT-END
 
-## Available Scripts
+###Descripción
+Por favor escriba un programa utilizando JS, HTML y CSS, que cumpla con los siguientes requerimientos funcionales:
+1. Consumir el API de xkcd: https://xkcd.com/json.html
+2. Crear la siguiente pantalla mostrando un comic aleatorio de xkcd.
+3. Permitir que el usuario califique el comic. 
+[![Layout](https://raw.githubusercontent.com/jinventionp/pruebatecnica/main/src/assets/img/layout.png "Layout")](# "Layout")
 
-In the project directory, you can run:
+La pantalla debe tener como mínimo las siguientes partes:
+1. Titulo del comic.
+2. Imagen del comic.
+3. Alguna forma interactiva para que el usuario pueda clasificar el comic.
 
-### `npm start`
+### Desarrollo
+Al consumir el API de xkcd: https://xkcd.com/json.html obtuve el siguiente Error de CORS policy (NO 'Access-Control-Allow-Origin') y se ejecutaron las siguientes configuraciones:
+- Se gregó proxy en el package.json "proxy": "https://xkcd.com"
+- Se instaló una extensión en el navegador llamada Moesif Orign & CORS
+- Se habilitó el CORS como parametros adicionales en la petición fetch
+```javascript
+const response = await fetch('https://xkcd.com/info.0.json', {
+	        'mode': 'cors',
+	        'headers': {
+            	'Access-Control-Allow-Origin': '*',
+        	}
+    	});
+```
+Y no logré solucionarlo ya que le estoy haciendo peticiones desde el localhost o que permisos debe tener el servidor donde esta el endpoint propuesto.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+La API se ha consumido con el siguiente endpoint de ejemplo publico en internet https://api.randomuser.me/ para desarrollar la solución.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Se ha creado el comic aleatorio con el endpoint  https://api.randomuser.me/
 
-### `npm test`
+La calificación por el usuario se ha creado implementando el framework material ui https://material-ui.com/ con el componente llamado Rating https://material-ui.com/api/rating/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Bonus
+Se otorgarán puntos extras en la prueba si en la implementación se utiliza una o más de las siguientes tecnologías/herramientas:
+- Vue, Angular o React.
+- Saas, Less.
+- Webpack.
 
-### `npm run build`
+### Desarrollo
+La prueba ha sido desarrollada con **Html5m Css3, React, Sass** y , se ejecuta **npm run build** lo cual crea una compilación optimizada de tu aplicación en el directorio build. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Pasos para ejecutar la solución
+1. Descargar e instalar [node.js](https://nodejs.org/ "node.js")
+2. Descargar la solución del repositorio https://github.com/jinventionp/pruebatecnica/
+3. Dentro de la carpeta descargada pruebatecnica ejecutar el comando **npm start**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Ejecución de la solución
+![Layout Solution](https://raw.githubusercontent.com/jinventionp/pruebatecnica/main/src/assets/img/LayoutSolution.png "Layout Solution")
